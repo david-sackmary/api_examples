@@ -59,9 +59,12 @@ data = json.loads(jsondata)
 #print json.dumps(data, sort_keys=True, indent=4)
 
 #HELP - I can't parse objects or contents.  not yet sure why...
+try:
 contents = data['baseline']['details']['targets']#['objects']['contents']
 for content in contents:
   print json.dumps(content, sort_keys=True, indent=4)
+except:
+  pass
 
 #At this point, I have a file which can easily be grepped, and then pipe the hashes to virustotal.
 #I am currently using a ruby program named 'uirusu' to interface with virustotal.  I will recode
