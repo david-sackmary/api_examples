@@ -52,6 +52,7 @@ data = json.loads(jsondata)
 #print data
 
 # print 'contents' for the given baseline
+# note to self.. this baseline is hardcoded.  add logic here...
 connection.request("GET", "/v1/fim_policies/be64cab06fdf0132a4ba3c764e10c221/baselines/cd20d5406fdf0132fe6f3c764e10c220/details", '', tokenheader)
 response = connection.getresponse()
 jsondata =  response.read().decode()
