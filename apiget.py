@@ -6,10 +6,13 @@
 # This should be a lot simpler than it is, but none of the oath2
 # modules seem to work well, so we do it by hand here.
 #
-clientid = 'XXXXXXXX'
-clientsecret = 'XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX' 
-host = 'api.cloudpassage.com'
 
+# This information is findable at https://portal.cloudpassage.com/settings/users
+config ={}
+execfile("config.conf",config)
+clientid = config['clientid'] #these must be defined in config.conf
+clientsecret = config['clientsecret'] #these must be defined in config.conf
+host = config['host']
 
 import urllib
 import httplib
